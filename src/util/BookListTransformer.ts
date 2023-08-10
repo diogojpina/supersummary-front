@@ -5,10 +5,10 @@ const BookListTransformer = (list: any): BookList => {
   if (list.books) {
     for (const book of list.books) {
       books.push({
-        ...book
+        ...book,
+        image: book.book_image
       })
     }
-    
   }
 
   const bookList = new BookList({
