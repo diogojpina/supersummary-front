@@ -1,8 +1,11 @@
 import React from 'react'
+import Layout from '../../components/layout/Layout'
 
 export default function HomePage() {
 
   return (
-    <div>Home</div>
+    <Layout>
+      <div>Home</div>
+    </Layout>
   )
 }
