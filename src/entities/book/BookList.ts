@@ -1,3 +1,5 @@
+import { Book } from "./Book"
+
 export class BookList {
   public name = ''
   public displayName = ''
@@ -6,6 +8,8 @@ export class BookList {
   public newestPublishedDate = new Date()
   public updated = ''
 
+  public books: Book[] = []
+
   constructor (data: any = {}) {
     this.name = data.name
     this.displayName = data.displayName
@@ -13,5 +17,11 @@ export class BookList {
     this.oldestPublishedDate = new Date(data.oldestPublishedDate)
     this.newestPublishedDate = new Date(data.newestPublishedDate)
     this.updated = data.updated
+
+    if (data.books) {
+      for (const book of data.books) {
+        this.books.push(new Book(book))
+      }
+    }
   }
 }

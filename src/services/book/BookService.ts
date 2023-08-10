@@ -1,5 +1,6 @@
 import NytApiClient from "../clients/NytApiClient";
 import { BookList } from "../../entities";
+import BookListTransformer from "../../util/BookListTransformer";
 
 const client = new NytApiClient()
 
@@ -8,21 +9,21 @@ export class BookService {
     const apiKey = process.env.REACT_APP_NYT_API_KEY
     const response = await client.DoRequest('GET', `/lists/names.json?api-key=${apiKey}`)  
 
-    console.log('response', response)
-
     const bookLists: BookList[] = []
     for (const list of response.results) {
-      const bookList = new BookList({
-        name: list.list_name,
-        displayName: list.display_name,
-        slug: list.list_name_encoded,
-        oldPublishedDate: list.oldest_published_date,
-        newPublishedDate: response.newest_published_date,
-        updated: list.updated,
-      })
+      const bookList = BookListTransformer(list)
       bookLists.push(bookList)
     }
 
     return bookLists
+  }
+
+  public static async getBestSellerList(date: string, list: string): Promise<BookList> {
+    const apiKey = process.env.REACT_APP_NYT_API_KEY
+    const response = await client.DoRequest('GET', `/lists/${date}/${list}.json?api-key=${apiKey}`)  
+
+    const bookList = BookListTransformer(response.results)
+
+    return bookList
   }
 }

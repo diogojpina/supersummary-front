@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { BookList } from "../../../../entities"
+import { BookList } from "../../../entities"
 
 interface ItemProps {
   bookList: BookList
@@ -13,7 +13,7 @@ export default function BookListItem(props: ItemProps) {
       <h3>{bookList.displayName}</h3>
       <p>{bookList.oldestPublishedDate.toString()}</p>
       <p>Updated: {bookList.updated}</p>
-      <Link to={`/lists/current/${bookList.slug}`}>See More</Link>
+      <Link to={`/list/current/${bookList.slug}`}>See More</Link>
     </div>
   )
 }

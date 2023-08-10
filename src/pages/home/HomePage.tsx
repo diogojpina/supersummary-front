@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../../components/layout/Layout'
 import { BookService } from '../../services'
 import { BookList } from '../../entities'
-import BookListItem from '../../components/book/book-list/item/BookListItem'
+import BookListItem from '../../components/book/book-list-item/BookListItem'
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false)
