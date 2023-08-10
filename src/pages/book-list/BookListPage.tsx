@@ -42,7 +42,7 @@ export default function BookListPage() {
       <h3>Books</h3>
       <div>
         {bookList.books.map(book => (
-          <BookItem book={book} />
+          <BookItem key={book.primaryIsbn13} book={book} />
         ))}
       </div>
     </Layout>

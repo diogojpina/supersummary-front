@@ -53,7 +53,7 @@ export default function HomePage() {
       </div>
       <div>
         {filterBookList(bookLists).map(bookList => (
-          <BookListItem bookList={bookList} />
+          <BookListItem key={bookList.slug} bookList={bookList} />
         ))}
       </div>
     </Layout>

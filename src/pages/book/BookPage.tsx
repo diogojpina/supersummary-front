@@ -14,7 +14,7 @@ export default function BookPage() {
   return (
     <Layout>
       <h1>{book.title}</h1>
-      <img src={book.image} />
+      <img src={book.image} alt={book.title} />
     </Layout>
   )
 }
