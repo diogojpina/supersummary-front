@@ -4,6 +4,8 @@ import { BookService } from '../../services'
 import { BookList } from '../../entities'
 import BookListItem from '../../components/book/book-list-item/BookListItem'
 
+import "./HomePage.scss"
+
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false)
   const [bookLists, setBookLists] = useState<BookList[]>([])
@@ -42,19 +44,21 @@ export default function HomePage() {
       {isLoading && (
         <div>Loading...</div>
       )}
-      <div>
-        <label>Search Filter</label>
-        <input 
-          type="text"
-          name="filter"
-          value={filter}
-          onChange={event => setFilter(event.target.value)}
-        />
-      </div>
-      <div>
-        {filterBookList(bookLists).map(bookList => (
-          <BookListItem key={bookList.slug} bookList={bookList} />
-        ))}
+      <div className="container">
+        <div className="content">
+          <label>Search Filter</label>
+          <input 
+            type="text"
+            name="filter"
+            value={filter}
+            onChange={event => setFilter(event.target.value)}
+          />
+        </div>
+        <div className="list">
+          {filterBookList(bookLists).map(bookList => (
+            <BookListItem key={bookList.slug} bookList={bookList}  />
+          ))}
+        </div>
       </div>
     </Layout>
   )

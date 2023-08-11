@@ -5,7 +5,7 @@ import './Header.scss'
 export default function Header() {
   return (
     <section className="header">
-      Best Sellers Book
+      Best Seller Books
     </section>
   )
 }

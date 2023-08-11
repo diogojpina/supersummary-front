@@ -17,9 +17,17 @@ export default function BookItem(props: ItemProps) {
   }
 
   return (
-    <div>
-      <h3>{book.title} ({book.rank})</h3>
-      <p>Publisher: {book.publisher}</p>
+    <div className="item">
+      <div className="image">
+        <span className="rank">{book.rank}</span>
+        <img src={book.image} alt="{book.title}"/>
+      </div>
+      <div className="info">
+        <span className="publisher">{book.publisher}</span>
+        <h4 className="title">{book.title} ({book.rank})</h4>
+        <p className="author">By {book.author}</p>
+        <p className="description">{book.description}</p>
+      </div>
       <button onClick={storeBook}>See Details</button>
     </div>
   )

@@ -5,6 +5,7 @@ export class Book {
   public rank = 0
   public publisher = ''
   public author = ''
+  public description = ''
   public primaryIsbn10 = ''
   public primaryIsbn13 = ''
   public image = ''
@@ -16,6 +17,8 @@ export class Book {
     this.title = data.title
     this.rank = data.rank || 0
     this.publisher = data.publisher
+    this.author = data.author
+    this.description = data.description
     this.primaryIsbn10 = data.primaryIsbn10
     this.primaryIsbn13 = data.primaryIsbn13
     this.image = data.image

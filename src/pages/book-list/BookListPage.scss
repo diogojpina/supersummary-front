@@ -1,0 +1,112 @@
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin: 0;
+  }
+
+  .bookList {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+
+    .item {
+      box-sizing: border-box;
+      padding: 1rem;
+      width: 100%;
+      max-width: 215px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+
+      
+
+      p, h4 {
+        margin: 0;
+      }
+
+      .image {
+        margin-bottom: 0.25rem;
+
+        display: flex;
+
+        img {
+          width: 112px;
+          height: 170px;
+        }
+      }
+
+      .rank {
+        padding: 0 0.25rem;
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: rgb(150, 150, 150);
+        border-radius: 0.5rem ;
+
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .info {
+        min-height: 180px;
+
+        .publisher {
+          font-size: 0.8rem;
+          color: rgb(30, 30, 30);
+          font-weight: 400;
+        }
+
+        .title {
+          font-size: 1.15rem;
+          color: rgb(30, 30, 30);
+          font-weight: 600;
+        }
+
+        .author {
+          font-size: 0.9rem;
+          color: rgb(30, 30, 30);
+          font-weight: 500;
+        }
+
+        .description {
+          margin: 0.25rem 0;
+          font-size: 0.85rem;
+          color: rgb(30, 30, 30);
+          font-weight: 400;
+          text-align: justify;
+        }
+      }
+
+      button {
+        padding: 0.25rem 0.5rem;
+        background: rgb(130, 130, 175);
+        color: white;
+        border-radius: 0.25rem;
+        transition: ease-in-out 0.3s;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button:hover {
+        background: rgb(150, 150, 180);
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+  }
+}

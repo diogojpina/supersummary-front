@@ -6,7 +6,10 @@ const BookListTransformer = (list: any): BookList => {
     for (const book of list.books) {
       books.push({
         ...book,
-        image: book.book_image
+        image: book.book_image,
+        isbn10: book.primary_isbn10,
+        isbn13: book.primary_isbn13,
+        buyLinks: book.buy_links
       })
     }
   }

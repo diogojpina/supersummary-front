@@ -5,6 +5,8 @@ import { BookList } from '../../entities'
 import { BookService } from '../../services'
 import { useParams } from 'react-router-dom'
 
+import "./BookListPage.scss"
+
 export default function BookListPage() {
   const params = useParams()
 
@@ -36,14 +38,16 @@ export default function BookListPage() {
       {isLoading && (
         <div>Loading...</div>
       )}
-      <div>
-        <h2>{bookList.displayName}</h2>
-      </div>
-      <h3>Books</h3>
-      <div>
-        {bookList.books.map(book => (
-          <BookItem key={book.primaryIsbn13} book={book} />
-        ))}
+      <div className="container">
+        <div>
+          <h2>{bookList.displayName}</h2>
+        </div>
+        <h3>Books</h3>
+        <div className="bookList">
+          {bookList.books.map(book => (
+            <BookItem key={book.primaryIsbn13} book={book} />
+          ))}
+        </div>
       </div>
     </Layout>
   )
