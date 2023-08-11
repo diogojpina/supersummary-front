@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Super Summary Challenge - Diogo Pina
+
+This is a repository for the front-end challenge for Super Summary developed by Diogo Pina.
+
+I used [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project. 
+I also added axios to connect to the The New York Times Book api. I also used SASS to style the pages.
+I developed three pages:
+
+1. Home page to list Best Seller Books list.
+2. List of books by Best Seller Books list
+3. Book detail
+
+## Future Improvements
+- Book list pagination
+- Book details review
+- Cache Best Seller Books list to create a sidebar menu
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
